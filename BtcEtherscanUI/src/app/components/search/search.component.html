@@ -1,0 +1,16 @@
+<div class="searchbar mb-2">
+  <!-- text input -->
+  <input type="text" class="form-control" placeholder="Search transactions by block number" [(ngModel)]="filter" (keyup.enter)="onSearch()" style="width: 650px;" />
+  <!-- input icon -->
+  <div class="search-icon">
+    <fa-icon [icon]="['fas', 'search']"></fa-icon>
+  </div>
+  <!-- x to clear input -->
+  <div class="clear-search" (click)="filter = ''">
+    <div *ngIf="!!filter"><fa-icon [icon]="['fas', 'times']"></fa-icon></div>
+  </div>
+  <!-- advanced search button -->
+  <button class="btn btn-append btn-light b-icon" type="button" (click)="onSearch()">
+    <fa-icon [icon]="['fas', 'sliders-h']"></fa-icon>
+  </button>
+</div>  

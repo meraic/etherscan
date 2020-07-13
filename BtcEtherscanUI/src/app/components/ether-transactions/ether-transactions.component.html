@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row">
+    <div style="padding-left: 0px;">
+      <app-search (searchOnEnter)="search($event)"></app-search>
+    </div>  
+  </div>
+  <div class="row">
+    <p-table #dt 
+        [columns]="txnCols"
+        [value]="txns" 
+        [paginator]="true" 
+        [rows]="16"
+        [showCurrentPageReport]="true" 
+        currentPageReportTemplate="Number of Transactions: {{totalTxns}}"
+        dataKey="transactionIndex" 
+        styleClass="ui-table-txns" 
+        [rowHover]="true" 
+        [loading]="loading"
+        [filterDelay]="0">
+        <ng-template pTemplate="caption">
+            <div class="ui-helper-clearfix" style="text-align: left"></div>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th></th>
+                <th *ngFor="let col of columns">{{col.header}}</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th>
+                    <input pInputText type="text" (input)="dt.filter($event.target.value, 'transactionHash', 'startsWith')" class="ui-column-filter" placeholder="Search by Transaction Hash">
+                </th>
+                <th>
+                    <input pInputText type="text" (input)="dt.filter($event.target.value, 'blockNumber', 'startsWith')" class="ui-column-filter" placeholder="Search by BlockNumber">
+                </th>
+                <th>
+                    <input pInputText type="text" (input)="dt.filter($event.target.value, 'From', 'contains')" class="ui-column-filter" placeholder="Search by From">
+                </th>
+                <th>
+                    <input pInputText type="text" (input)="dt.filter($event.target.value, 'to', 'contains')" class="ui-column-filter" placeholder="Search by To">
+                </th>
+                <th>
+                    <input pInputText type="text" (input)="dt.filter($event.target.value, 'gas', 'contains')" class="ui-column-filter" placeholder="Search by Gas">
+                </th>
+                <th>
+                    <input pInputText type="text" (input)="dt.filter($event.target.value, 'gasPrice', 'contains')" class="ui-column-filter" placeholder="Search by Gas Price">
+                </th>
+                <th>
+                    <input pInputText type="text" (input)="dt.filter($event.target.value, 'value', 'contains')" class="ui-column-filter" placeholder="Search by Value">
+                </th>
+                <th>
+                  <input pInputText type="text" (input)="dt.filter($event.target.value, 'nonce', 'contains')" class="ui-column-filter" placeholder="Search by Nonce">
+                </th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-txn let-rowData let-columns="columns" let-rowIndex> 
+            <tr class="ui-selectable-row">
+                <td class="ui-resizable-column">
+                    <p-tableCheckbox [value]="txn"></p-tableCheckbox>
+                </td>
+                <!--
+                <td *ngFor="let col of columns">
+                    {{ col.type ? col.type.transform(rowData[col.field], col.arg1, col.arg2, col.arg3) : rowData[col.field] }}
+                </td>
+                -->
+                <!--<td placement="bottom" ngbTooltip="{{txn.transactionHash}}">{{txn.transactionHash | slice:0:17 }}...</td>-->
+                <td><a href="">{{txn.transactionHash | slice:0:17 }}...</a></td>
+                <td><a href="">{{txn.blockNumber}}</a></td>
+                <td><a href="">{{txn.from | slice:0:17 }}...</a></td>
+                <td><a href="">{{txn.to | slice:0:17 }}...</a></td>
+                <td>{{txn.gas}}</td>
+                <td>{{txn.gasPrice}}</td>
+                <td>{{txn.value}} Ether</td>
+                <td>{{txn.nonce}}</td>
+                <td>
+                    <div class="btn-group" ngbDropdown role="group">
+                        <button class="btn btn-light b-label b-icon" ngbDropdownToggle role="group" placement="bottom" ngbTooltip="More">
+                            <fa-icon [icon]="['fas', 'ellipsis-v']" size="lg"></fa-icon>
+                        </button>
+                        <div class="dropdown-menu" ngbDropdownMenu>
+                            <button class="dropdown-item clickable">View Txn Details</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="8" style="text-align:left">No txn found.</td>
+        </tr>
+        </ng-template>
+    </p-table>                                                    
+  </div>
+</div>

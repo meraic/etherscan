@@ -1,0 +1,189 @@
+@import '../../../variables.scss';
+
+
+input.form-control,
+select.form-control,
+textarea.form-control {
+  border: 2px solid $borders;
+  font-size: $label-1;
+  color: $text;
+  font-weight: 400;
+  height: calc(1.5em + 1.15rem + 2px);
+
+  &:focus {
+    border-color: lighten($blue, 20%);
+    box-shadow: 0 0 0 0.2rem lighten($blue, 45%);
+  }
+}
+
+.searchbar {
+    position: relative;
+    color: $grey-2;
+  
+    input {
+      padding-left: 2.375rem;
+      padding-right: 4rem;
+      font-size: 14px;
+      @media only screen and (min-width: $lg-min) {
+        height: calc(1.5em + 1.15rem + 12px);
+        padding-left: 3.125rem;
+        padding-right: 4.75rem;
+      }
+    }
+  
+    .search-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.375rem;
+      padding-left: 5px;
+      @media only screen and (min-width: $lg-min) {
+        width: 3.125rem;
+      }
+    }
+  
+    .clear-search {
+      right: 2.5rem;
+      position: absolute;
+      padding-top: 3px;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.8rem;
+      cursor: pointer;
+      @media only screen and (min-width: $lg-min) {
+        right: 3.125rem;
+        width: 1.5rem;
+      }
+    }
+  
+    button.btn.btn-append {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      margin: 0;
+      right: 0;
+      font-size: 1rem;
+      border: 2px solid;
+      @media only screen and (min-width: $lg-min) {
+        width: 3.125rem;
+      }
+    }
+}
+  
+  // Refine container
+  .refine-container {
+    min-width: 832px;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+  
+  .refine-div {
+    height: 70px;
+  }
+  
+  .append-dropdown-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    margin-left: 0;
+  }
+  
+  // Refine container for mobiles
+  //TODO: refactor into an actual modal for mobile only, thus removing !important. Currently needed to override ng-bootstrap inline styles
+  .refine-filter-drop-down-menu {
+    @media screen and (max-width: $screen-md-min) {
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      margin: 0;
+      border-radius: 0;
+      border: 0px;
+      transform: none;
+      top: 0;
+      width: 100px;
+    }
+  }
+  
+  .refine-filter-menu-title {
+    display: flex;
+  
+    @media screen and (min-width: $screen-md-min) {
+      display: none;
+    }
+  }
+  
+  .refine-filter-menu-button {
+    margin-left: 0;
+  }
+  
+  .refine-drop-down-text-mobile-view {
+    @media screen and (max-width: $screen-md-min) {
+      display: inherit;
+    }
+  
+    @media screen and (min-width: $screen-md-min + 1) {
+      display: none;
+    }
+  }
+  
+  .refine-drop-down-text-non-mobile-view {
+    @media screen and (max-width: $screen-md-min) {
+      display: none;
+    }
+  
+    @media screen and (min-width: $screen-md-min + 1) {
+      display: inherit;
+    }
+  }
+  
+  hr {
+    &.hr-dashed {
+      border-top: 1px dashed $borders;
+    }
+  }
+  
+  // Active filter badge indicator
+  .advanced-filter-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 10;
+    height: 20px;
+    width: 20px;
+    background: #de505d;
+    border-radius: 50%;
+    border: 5px solid white;
+  
+    // unapplied filter color
+    &.not-applied {
+      background: orange;
+    }
+  }
+  
+  // innactive filters notify
+  .filter-response.spinner-grow {
+    left: -6px;
+    top: -6px;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    color: orange;
+  }
+
+  input.form-control, select.form-control, textarea.form-control {
+    border: 2px solid #cfd2da;
+    font-size: .8125rem;
+    color: #363d4e;
+    font-weight: 400;
+    height: calc(1.5em + 1.15rem + 2px);
+  }

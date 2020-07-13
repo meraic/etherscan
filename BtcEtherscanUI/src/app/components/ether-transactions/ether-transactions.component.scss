@@ -1,0 +1,465 @@
+.content-section {
+	display: block;
+	padding: 30px;
+    overflow: hidden;
+    
+	&:first-of-type {
+		> div {
+			> span {
+                line-height: 1.5em;
+                
+				&:last-child {
+					font-size: 16px;
+				}
+			}
+		}
+    }
+    
+	h2 {
+		margin-top: 0;
+	}
+}
+
+:host ::ng-deep .ui-table-txns {
+    min-height: 86vh;
+    font-size: 0.75rem;
+    margin-top: 10px;;
+
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    
+    .flag {
+        vertical-align: middle;
+        width: 30px;
+        height: 20px;
+    }
+
+    .ui-multiselect-representative-option {
+        display: inline-block;
+        vertical-align: middle;
+
+        img {
+            vertical-align: middle;
+            width: 24px;
+        }
+
+        span {
+            margin-top: .125em;
+            vertical-align: middle; 
+            margin-left: .5em
+        }
+    }
+
+    .ui-paginator {
+        .ui-dropdown {
+            float: left;
+        }
+    
+        .ui-paginator-current {
+            float: right;
+        }
+    }
+
+    .ui-chkbox .ui-chkbox-box {
+        width: 16px; 
+        height: 16px; 
+        text-align: center;
+        margin-top: 2px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        -moz-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -o-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .ui-chkbox .ui-chkbox-box:not(.ui-state-disabled):hover {
+        border-color: #212121;
+    }
+
+    .ui-chkbox .ui-chkbox-box.ui-state-focus {
+        outline: 0 none;
+        outline-offset: 0;
+        -webkit-box-shadow: 0 0 0 0.2em #8dcdff;
+        -moz-box-shadow: 0 0 0 0.2em #8dcdff;
+        box-shadow: 0 0 0 0.2em #8dcdff;
+        border-color: #007ad9;
+    }
+
+    .ui-chkbox .ui-chkbox-box.ui-state-active {
+        border-color: #151914;
+        background-color: #151914;
+        color: #ffffff;
+    }
+
+    .ui-chkbox .ui-chkbox-box.ui-state-active:not(.ui-state-disabled):hover {
+        border-color: #151914; //chetan
+        background-color: #151914;
+        color: #ffffff;
+    }
+
+    .ui-chkbox .ui-chkbox-box .ui-chkbox-icon {
+        overflow: hidden;
+        position: relative;
+        font-size: 15px; //chetan
+    }
+
+    .ui-progressbar {
+        height: 8px;
+        background-color: #D8DADC;
+    
+        .ui-progressbar-value {
+            background-color: #00ACAD;
+        }
+    }
+
+    .ui-column-filter {
+        display: block;
+    
+        input {
+            width: 100%;
+        }
+    }
+
+    .ui-table-globalfilter-container {
+        float: right;
+    
+        input {
+            width: 200px;
+            height: 22px;
+            font-size: 13px;  
+        }
+    }
+
+    .ui-datepicker {
+        min-width: 25em;
+    
+        td {
+            font-weight: 400;
+        }
+    }
+
+    .ui-table-caption {
+        border: 0 none;
+        padding: 12px;
+        text-align: left;
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    .ui-paginator {
+        border: 0 none;
+        padding: 1em;
+    }
+
+    .ui-table-thead > tr > th {
+        border: 0 none;
+        text-align: left;
+        font-size: 13px;
+
+        &.ui-filter-column {
+            border-top: 1px solid #c8c8c8;
+        }
+
+        &:first-child {
+            width: 5em;
+            text-align: center;
+        }
+
+        &:last-child {
+            width: 8em;
+            text-align: center;
+        }
+    }
+
+    .ui-table-tbody > tr > td {
+        border: 0 none;
+        cursor: auto;
+
+        &:first-child {
+            width: 3em;
+            text-align: center;
+        }
+
+        &:last-child {
+            width: 8em;
+            text-align: center;
+        }
+    }
+
+    .ui-dropdown-label:not(.ui-placeholder) {
+        text-transform: uppercase;
+    }
+
+    .ui-table-tbody > tr > td .ui-column-title {
+        display: none;
+    }
+}
+
+:host ::ng-deep .ui-table-employees {
+    min-height: 82vh;
+
+    font-size: 0.82rem;
+
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    
+    .flag {
+        vertical-align: middle;
+        width: 30px;
+        height: 20px;
+    }
+
+    .ui-multiselect-representative-option {
+        display: inline-block;
+        vertical-align: middle;
+
+        img {
+            vertical-align: middle;
+            width: 24px;
+        }
+
+        span {
+            margin-top: .125em;
+            vertical-align: middle; 
+            margin-left: .5em
+        }
+    }
+
+    .ui-paginator {
+        .ui-dropdown {
+            float: left;
+        }
+    
+        .ui-paginator-current {
+            float: right;
+        }
+    }
+
+    .ui-chkbox .ui-chkbox-box {
+        width: 16px; 
+        height: 16px; 
+        text-align: center;
+        margin-top: 2px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        -moz-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -o-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .ui-chkbox .ui-chkbox-box:not(.ui-state-disabled):hover {
+        border-color: #212121;
+    }
+
+    .ui-chkbox .ui-chkbox-box.ui-state-focus {
+        outline: 0 none;
+        outline-offset: 0;
+        -webkit-box-shadow: 0 0 0 0.2em #8dcdff;
+        -moz-box-shadow: 0 0 0 0.2em #8dcdff;
+        box-shadow: 0 0 0 0.2em #8dcdff;
+        border-color: #007ad9;
+    }
+
+    .ui-chkbox .ui-chkbox-box.ui-state-active {
+        border-color: #151914;
+        background-color: #151914;
+        color: #ffffff;
+    }
+
+    .ui-chkbox .ui-chkbox-box.ui-state-active:not(.ui-state-disabled):hover {
+        border-color: #151914; //chetan
+        background-color: #151914;
+        color: #ffffff;
+    }
+
+    .ui-chkbox .ui-chkbox-box .ui-chkbox-icon {
+        overflow: hidden;
+        position: relative;
+        font-size: 15px; //chetan
+    }
+
+    .ui-progressbar {
+        height: 8px;
+        background-color: #D8DADC;
+    
+        .ui-progressbar-value {
+            background-color: #00ACAD;
+        }
+    }
+
+    .ui-column-filter {
+        display: block;
+    
+        input {
+            width: 100%;
+        }
+    }
+
+    .ui-table-globalfilter-container {
+        float: right;
+    
+        input {
+            width: 200px;
+            height: 22px;
+            font-size: 13px;  
+        }
+    }
+
+    .ui-datepicker {
+        min-width: 25em;
+    
+        td {
+            font-weight: 400;
+        }
+    }
+
+    .ui-table-caption {
+        border: 0 none;
+        padding: 12px;
+        text-align: left;
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    .ui-paginator {
+        border: 0 none;
+        padding: 1em;
+    }
+
+    .ui-table-thead > tr > th {
+        border: 0 none;
+        text-align: left;
+        font-size: 14px;
+
+        &.ui-filter-column {
+            border-top: 1px solid #c8c8c8;
+        }
+
+        &:first-child {
+            width: 5em;
+            text-align: center;
+        }
+
+        &:last-child {
+            width: 8em;
+            text-align: center;
+        }
+    }
+
+    .ui-table-tbody > tr > td {
+        border: 0 none;
+        cursor: auto;
+
+        &:first-child {
+            width: 3em;
+            text-align: center;
+        }
+
+        &:last-child {
+            width: 8em;
+            text-align: center;
+        }
+    }
+
+    .ui-dropdown-label:not(.ui-placeholder) {
+        text-transform: uppercase;
+    }
+
+    .ui-table-tbody > tr > td .ui-column-title {
+        display: none;
+    }
+}
+
+body .ui-chkbox .ui-chkbox-box {
+    width: 25px;
+    height: 25px;
+}
+
+body .ui-chkbox .ui-chkbox-box .ui-chkbox-icon {
+    font-size: 20px;
+}
+
+button.btn.btn-light.b-icon.b-label .ng-fa-icon, .btn.btn-light.b-icon.b-label .ng-fa-icon {
+    padding-left: 0px;
+}
+
+/* Responsive */
+@media screen and (max-width: 64em) {
+    :host ::ng-deep .ui-table {
+        &.ui-table-txns {
+            .ui-table-thead > tr > th,
+            .ui-table-tfoot > tr > td {
+                display: none !important;
+            }
+
+            .ui-table-tbody > tr > td {
+                text-align: left;
+                display: block;
+                border: 0 none !important;
+                width: 100% !important;
+                float: left;
+                clear: left;
+                border: 0 none;
+
+                .ui-column-title {
+                    padding: .4em;
+                    min-width: 30%;
+                    display: inline-block;
+                    margin: -.4em 1em -.4em -.4em;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.mb-2, .my-2 {
+    margin-bottom: 1rem !important;
+}
+
+.btn.btn-light.b-icon, button.btn.btn-light.b-icon {
+    background: 0 0;
+    min-width: 44px;
+    border-color: transparent;
+    padding-left: .75rem;
+    padding-right: .75rem;
+}
+
+.btn.btn-light, button.btn.btn-light {
+    background-color: #fff;
+    border: 2px solid #cfd2da;
+    color: #363d4e;
+}
+
+.btn-group-vertical>.btn, .btn-group>.btn {
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.btn, button.btn {
+    border-width: 2px!important;
+    padding: .5rem 1.875rem;
+    font-size: .8125rem;
+    font-weight: 500;
+}
+
+.dropdown-toggle {
+    white-space: nowrap;
+}
+
+.button, select {
+    text-transform: none;
+}
+
+.button, input {
+    overflow: visible;
+}
+
+.button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
